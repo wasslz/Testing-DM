@@ -38,5 +38,7 @@ rebuild-docker.sh
 .run/**
 .run
 
-docker-compose.yml
+
 .vscode/** 
+docker-compose.yaml
+.vscode/*
