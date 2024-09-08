@@ -4,7 +4,7 @@
 
 Wassslz Platform is an open-source IoT platform for data collection, processing, visualization, and device management, on top of ThingsBoard IoT platform. It enables device connectivity via industry standard IoT protocols - MQTT, CoAP and HTTP and supports both cloud and on-premises deployments. ThingsBoard combines scalability, fault-tolerance and performance so you will never lose your data.
 
-<img src="./img/logo.png?raw=true" width="100" height="100">
+<img src="./img/logo.png?raw=true" width="165" height="165">
 
 ## Documentation
 
