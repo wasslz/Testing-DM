@@ -15,7 +15,7 @@
 ///
 
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 import {
   DateEntityTableColumn,
   EntityActionTableColumn,
@@ -33,10 +33,10 @@ import { DomainComponent } from '@home/pages/admin/oauth2/domains/domain.compone
 import { isEqual } from '@core/utils';
 import { DomainTableHeaderComponent } from '@home/pages/admin/oauth2/domains/domain-table-header.component';
 import { Direction } from '@app/shared/models/page/sort-order';
-import { map } from 'rxjs';
+import { map, Observable, of, mergeMap } from 'rxjs';
 
 @Injectable()
-export class DomainTableConfigResolver implements Resolve<EntityTableConfig<DomainInfo>> {
+export class DomainTableConfigResolver  {
 
   private readonly config: EntityTableConfig<DomainInfo> = new EntityTableConfig<DomainInfo>();
 
@@ -54,8 +54,6 @@ export class DomainTableConfigResolver implements Resolve<EntityTableConfig<Doma
     this.config.headerComponent = DomainTableHeaderComponent;
     this.config.addDialogStyle = {width: '850px', maxHeight: '100vh'};
     this.config.defaultSortOrder = {property: 'createdTime', direction: Direction.DESC};
-    this.config.displayPagination = false;
-    this.config.pageMode = false;
 
     this.config.columns.push(
       new DateEntityTableColumn<DomainInfo>('createdTime', 'common.created-time', this.datePipe, '170px'),
@@ -89,18 +87,22 @@ export class DomainTableConfigResolver implements Resolve<EntityTableConfig<Doma
     this.config.loadEntity = id => this.domainService.getDomainInfoById(id.id);
     this.config.saveEntity = (domain, originalDomain) => {
       const clientsIds = domain.oauth2ClientInfos as Array<string> || [];
+      let clientsTask: Observable<void>;
       if (domain.id && !isEqual(domain.oauth2ClientInfos?.sort(),
         originalDomain.oauth2ClientInfos?.map(info => info.id ? info.id.id : info).sort())) {
-        this.domainService.updateOauth2Clients(domain.id.id, clientsIds).subscribe();
+        clientsTask = this.domainService.updateOauth2Clients(domain.id.id, clientsIds);
+      } else {
+        clientsTask = of(null);
       }
       delete domain.oauth2ClientInfos;
-      return this.domainService.saveDomain(domain, domain.id ? [] : clientsIds).pipe(
-        map(domain => {
-          (domain as DomainInfo).oauth2ClientInfos = clientsIds;
-          return domain;
+      return clientsTask.pipe(
+        mergeMap(() => this.domainService.saveDomain(domain, domain.id ? [] : clientsIds)),
+        map(savedDomain => {
+          (savedDomain as DomainInfo).oauth2ClientInfos = clientsIds;
+          return savedDomain;
         })
       );
-    }
+    };
     this.config.deleteEntity = id => this.domainService.deleteDomain(id.id);
   }
 
