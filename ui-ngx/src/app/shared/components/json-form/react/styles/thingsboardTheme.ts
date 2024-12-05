@@ -19,7 +19,7 @@ import { ThemeOptions } from '@mui/material/styles';
 import { PaletteOptions } from '@mui/material/styles/createPalette';
 import { mergeDeep } from '@core/utils';
 
-const PRIMARY_COLOR = '#305680';
+const PRIMARY_COLOR = '#009688';
 const SECONDARY_COLOR = '#527dad';
 const HUE3_COLOR = '#a7c1de';
 
