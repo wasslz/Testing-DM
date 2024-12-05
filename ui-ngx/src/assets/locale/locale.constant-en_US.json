@@ -7374,7 +7374,7 @@
             "sys-admin": {
                 "step1": {
                     "title": "Create Tenant & Tenant Administrator",
-                    "content": "<p>A tenant is an individual or an organization that owns or produces devices and assets. The tenant may have multiple tenant administrator users, customers, devices, and assets.</p><p>The Tenant Administrator can create and manage devices, assets, customers, and dashboards within the tenant account.</p><p>Follow the documentation on how to do it:</p>",
+                    "content": "<p>Test ##</p>",
                     "how-to-create-tenant": "How to create Tenant & Tenant Administrator"
                 },
                 "step2": {
