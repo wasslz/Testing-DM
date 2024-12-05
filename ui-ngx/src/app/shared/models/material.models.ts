@@ -91,7 +91,7 @@ export const materialColorPalette: {[palette: string]: {[spectrum: string]: stri
   indigo: {
     50: '#e8eaf6',
     100: '#c5cae9',
-    200: '#9fa8da',
+    200: '#9cd1cd',
     300: '#7986cb',
     400: '#5c6bc0',
     500: '#3f51b5',

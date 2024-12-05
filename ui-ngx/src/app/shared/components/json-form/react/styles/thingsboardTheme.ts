@@ -19,9 +19,9 @@ import { ThemeOptions } from '@mui/material/styles';
 import { PaletteOptions } from '@mui/material/styles/createPalette';
 import { mergeDeep } from '@core/utils';
 
-const PRIMARY_COLOR = '#305680';
-const SECONDARY_COLOR = '#527dad';
-const HUE3_COLOR = '#a7c1de';
+const PRIMARY_COLOR = '#009688';
+const SECONDARY_COLOR = '#4db6ac';
+const HUE3_COLOR = '#81b9b4';
 
 const tbIndigo = mergeDeep<any>({}, indigo, {
   500: PRIMARY_COLOR,
