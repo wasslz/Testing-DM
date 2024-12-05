@@ -7374,7 +7374,7 @@
             "sys-admin": {
                 "step1": {
                     "title": "Create Tenant & Tenant Administrator",
-                    "content": "<p>Test###</p>",
+                    "content": "<p>Test ##</p>",
                     "how-to-create-tenant": "How to create Tenant & Tenant Administrator"
                 },
                 "step2": {
