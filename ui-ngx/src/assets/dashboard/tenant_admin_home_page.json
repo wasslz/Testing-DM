@@ -1356,40 +1356,6 @@
             }
           }
         }
-      },
-      "mobile_app_qr_code": {
-        "name": "Mobile App QR code",
-        "root": false,
-        "layouts": {
-          "main": {
-            "widgets": {
-              "ed33e56f-293b-aaaa-ad19-0cf499dc926f": {
-                "sizeX": 120,
-                "sizeY": 45,
-                "row": 0,
-                "col": 0,
-                "mobileHide": true
-              },
-              "8c5207d8-7103-4dc2-db48-d61c0c8c61fd": {
-                "sizeX": 120,
-                "sizeY": 17,
-                "row": 45,
-                "col": 0
-              }
-            },
-            "gridSettings": {
-              "backgroundColor": "#eeeeee",
-              "columns": 120,
-              "margin": 12,
-              "outerMargin": false,
-              "backgroundSizeMode": "100%",
-              "autoFillHeight": true,
-              "backgroundImageUrl": null,
-              "mobileAutoFillHeight": false,
-              "mobileRowHeight": 20
-            }
-          }
-        }
       }
     },
     "entityAliases": {

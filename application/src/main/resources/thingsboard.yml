@@ -1428,16 +1428,16 @@ swagger:
   # Nonsecurity API path match pattern of swagger UI links
   non_security_path_regex: "${SWAGGER_NON_SECURITY_PATH_REGEX:/api/(?:noauth|v1)/.*}"
   # The title on the API doc UI page
-  title: "${SWAGGER_TITLE:ThingsBoard REST API}"
+  title: "${SWAGGER_TITLE:Wasslz REST API}"
   # The description on the API doc UI page
-  description: "${SWAGGER_DESCRIPTION: ThingsBoard open-source IoT platform REST API documentation.}"
+  description: "${SWAGGER_DESCRIPTION: Based on ThingsBoard open-source IoT platform REST API documentation.}"
   contact:
     # The contact name on the API doc UI page
-    name: "${SWAGGER_CONTACT_NAME:ThingsBoard team}"
+    name: "${SWAGGER_CONTACT_NAME:Wasslz team}"
     # The contact URL on the API doc UI page
-    url: "${SWAGGER_CONTACT_URL:https://thingsboard.io}"
+    url: "${SWAGGER_CONTACT_URL:https://wasslz.com}"
     # The contact email on the API doc UI page
-    email: "${SWAGGER_CONTACT_EMAIL:info@thingsboard.io}"
+    email: "${SWAGGER_CONTACT_EMAIL:support@wasslz.com}"
   license:
     # The license title on the API doc UI page
     title: "${SWAGGER_LICENSE_TITLE:Apache License Version 2.0}"
@@ -1446,7 +1446,7 @@ swagger:
   # The version of the API doc to display. Default to the package version.
   version: "${SWAGGER_VERSION:}"
   # The group name (definition) on the API doc UI page.
-  group_name: "${SWAGGER_GROUP_NAME:thingsboard}"
+  group_name: "${SWAGGER_GROUP_NAME:wasslz}"
 
 # Queue configuration parameters
 queue:
